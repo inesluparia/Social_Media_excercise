@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<form action="">
-    <label for="name">Write your name</label>
-    <input type="text" id="name">
+<h1>👋 Post something</h1>
+<form action="/create-post" method="POST">
+    <label for="title">Title: </label><br>
+    <input placeholder="type your title here" type="text" id="title" name="title"><br>
+    <br>
+    <label>Content:</label><br>
+    <input placeholder="type your post here" type="text" name="post_content"><br>
+    <br>
+    <input type="radio" id="Private" name="private-public" value="Private">
+    <label for="Private">Private</label> <br>
+    <input type="radio" id="Public" name="private-public" value="Public">
+    <label for="Public">Public</label> <br>
+    <br>
+    <input type="date" id="Date" name="date">
+    <br><br>
+    <button type="submit">Create Post</button>
 </form>
 </body>
 </html>
