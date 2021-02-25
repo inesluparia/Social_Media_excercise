@@ -13,14 +13,13 @@ import static com.example.demo.Services.Post.posts;
 
 @Controller
 public class FormExample {
-    // Showing how to create a form using thymeleaf
+
     @GetMapping(value = "/form")
     public String renderForm() {
         return "form";
     }
 
     @PostMapping("/create-post")
-    @ResponseBody
     public String createNewPost(@RequestParam("title") String title, @RequestParam ("post_content") String content,
                                @RequestParam ("private-public") String pp, @RequestParam ("date") String date){
         Post post = new Post(title,content,pp,date);
@@ -30,8 +29,8 @@ public class FormExample {
 
     @GetMapping("/success")
     @ResponseBody
-    public String newPostSuccess(){
-        return "Your post has been created";
+    public String newPostSuccess(@RequestParam String title){
+        return "Your post \""+title+"\" has been created";
     }
 
     @GetMapping(value="/list")
@@ -39,4 +38,6 @@ public class FormExample {
     public ArrayList renderList() {
         return Post.posts;
     }
+
+    
 }
