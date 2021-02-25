@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.Services.Post;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,9 @@ import static com.example.demo.Services.Post.posts;
 
 @Controller
 public class FormExample {
+
+
+
 
     @GetMapping(value = "/form")
     public String renderForm() {
@@ -29,8 +33,26 @@ public class FormExample {
 
     @GetMapping("/success")
     @ResponseBody
-    public String newPostSuccess(@RequestParam String title){
-        return "Your post \""+title+"\" has been created";
+    public String newPostSuccess(){
+        int index = Post.posts.size()-1;
+        Post post = Post.posts.get(index);
+        return "Your post has been created\n"+post.title;
+
+    }
+
+
+    @GetMapping("/dashboard")
+    public String dashboard(Model model){
+        ArrayList<Post>publicPosts = new ArrayList<>();
+        for (Post post : posts){
+            if (post.private_public.equals("Public")){
+                publicPosts.add(post);
+            }
+        }
+
+        model.addAttribute("publicPosts",publicPosts);
+
+        return "dashboard.html";
     }
 
     @GetMapping(value="/list")
