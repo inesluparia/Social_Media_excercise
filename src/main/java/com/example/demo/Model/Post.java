@@ -1,6 +1,5 @@
-package com.example.demo.Services;
+package com.example.demo.Model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Post {

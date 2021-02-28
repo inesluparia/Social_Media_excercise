@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-
+    <link th:href="@{/styles/dashmain.css}" rel="stylesheet" />
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Posts Dashboard</title>
 </head>
 <body>
-
-<ul th:each="post : ${publicPosts}">
-    <li th:text="${post.title}"></li>
-</ul>
-
+<header>
+    <h4 class="logo">SOCIAL DAYS</h4>
+</header>
+<nav class="topnav">
+    <a href="#">Home</a>
+    <a href="#">Content</a>
+    <a href="#">About</a>
+</nav>
+<h1>These are the current posts:</h1>
+<div th:each="post:${publicPosts}">
+    <h4 th:text="${post.title}">1</h4>
+    <p th:text="${post.content}">Title ...</p>
+    <p th:text="${post.stringDate}">date ...</p>
+</div>
+<footer>Developed by me</footer>
 </body>
 </html>
