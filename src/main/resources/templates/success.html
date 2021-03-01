@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="styles/main.css">>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h4 class="logo">SOCIAL DAYS</h4>
+</header>
+<nav class="topnav">
+    <a href="/">Home</a>
+    <a href="/dashboard">Content</a>
+    <a href="/">About</a>
+</nav>
+<h1>your post has been created!</h1>
+<br>
+<h4 th:text="${yourPost.title}">Title...</h4>
+<p th:text="${yourPost.content}">Content...</p>
+<p th:text="${yourPost.stringDate}">Date...</p>
+</body>
+</html>
