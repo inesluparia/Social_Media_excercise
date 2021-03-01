@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Social Media</title>
@@ -22,6 +22,7 @@
 <form action="/submit">
     <input type="submit" value="Create a post" />
 </form>
-<footer>Developed by me</footer>
 </body>
+<footer th:replace="fragments/footer">Default</footer>
+
 </html>

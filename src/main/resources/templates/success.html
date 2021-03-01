@@ -11,9 +11,10 @@
 </header>
 <nav class="topnav">
     <a href="/">Home</a>
-    <a href="/dashboard">Content</a>
+    <a href="/dashboard">Dashboard</a>
     <a href="/">About</a>
 </nav>
+<nav th:replace="top-navigation"></nav>
 <h1>Your post has been created!</h1>
 <br>
 <div class="post-container">
@@ -23,4 +24,6 @@
 <p th:text="${yourPost.stringDate}">Date...</p>
 </div>
 </body>
+<footer th:replace="fragments/footer">Default</footer>
+
 </html>

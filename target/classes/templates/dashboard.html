@@ -21,6 +21,7 @@
     <p th:text="${post.private_public}">Public</p>
     <p th:text="${post.stringDate}">Date...</p>
 </div>
-<footer>Developed by me</footer>
 </body>
+<footer th:replace="fragments/footer">Default</footer>
+
 </html>
