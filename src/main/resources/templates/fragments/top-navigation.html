@@ -1,8 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<nav class="topnav">
-    <a href="/">Home</a>
-    <a href="/dashboard">Dashboard</a>
-    <a href="/">About</a>
-</nav>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="logo"> <b>SOCIAL DAYS</b> </div>
+<div th:switch="${base}">
+    <nav th:case='Home'>
+        <a class="selected" href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/submit">Create post</a>
+    </nav>
+
+    <nav th:case='Dashboard'>
+        <a href="/">Home</a>
+        <a class="selected" href="/dashboard">Dashboard</a>
+        <a href="/submit">Create post</a>
+    </nav>
+
+    <nav th:case='Post'>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a class="selected" href="/submit">Create post</a>
+    </nav>
+
+    <nav th:case='*'>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/submit">Create post</a>
+    </nav>
+
+</div>
+
 </html>

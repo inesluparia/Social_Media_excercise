@@ -5,12 +5,14 @@
     <title>Error</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+<nav th:replace="fragments/top-navigation"></nav>
 <body>
+<br>
 <h1>Something went wrong</h1>
 <p>Please try again filling out all of the fields.</p>
-<form action="/submit">
-    <input type="submit" value="Create a post" />
-</form>
+<button>
+    <a th:href="@{/submit}">Create a post</a>
+</button>
 </body>
 <footer th:replace="fragments/footer">Default</footer>
 

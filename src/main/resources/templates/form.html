@@ -2,10 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Post something - Social Media</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+<nav th:replace="fragments/top-navigation(base = 'Post')"></nav>
 <body>
+<br>
 <h1>👋 Post something</h1>
 <form action="/submit-post" method="POST">
     <label for="title">Title: </label><br>

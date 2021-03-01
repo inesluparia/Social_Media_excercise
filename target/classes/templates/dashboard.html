@@ -3,17 +3,11 @@
 <head>
     <link th:href="@{/styles/main.css}" rel="stylesheet" />
     <meta charset="UTF-8">
-    <title>Posts Dashboard</title>
+    <title>Dashboard - Social Media</title>
 </head>
 <body>
-<header>
-    <h4 class="logo">SOCIAL DAYS</h4>
-</header>
-<nav class="topnav">
-    <a href="/">Home</a>
-    <a href="/dashboard">Content</a>
-    <a href="/">About</a>
-</nav>
+<nav th:replace="fragments/top-navigation.html(base = 'Dashboard')"></nav>
+<br>
 <h1>These are the current posts</h1>
 <div class="post-container" th:each="post:${publicPosts}">
     <h4 th:text="${post.title}">Title...</h4>
