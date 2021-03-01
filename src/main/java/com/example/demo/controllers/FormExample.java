@@ -18,6 +18,11 @@ public class FormExample {
             return "index.html";
     }
 
+    @GetMapping("/error")
+    public String error(){
+        return "error.html";
+    }
+
     @GetMapping(value = "/submit")
     public String renderForm() {
         return "form.html";
