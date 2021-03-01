@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 
 import static com.example.demo.Model.Post.posts;
-
+//testing push on gh
 @Controller
 public class FormExample {
 
