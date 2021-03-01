@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" href="styles/main.css">>
+    <link rel="stylesheet" href="styles/main.css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -14,10 +14,13 @@
     <a href="/dashboard">Content</a>
     <a href="/">About</a>
 </nav>
-<h1>your post has been created!</h1>
+<h1>Your post has been created!</h1>
 <br>
+<div class="post-container">
 <h4 th:text="${yourPost.title}">Title...</h4>
 <p th:text="${yourPost.content}">Content...</p>
+<p th:text="${yourPost.private_public}">Public</p>
 <p th:text="${yourPost.stringDate}">Date...</p>
+</div>
 </body>
 </html>

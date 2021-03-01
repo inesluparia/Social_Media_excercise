@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link th:href="@{/styles/dashmain.css}" rel="stylesheet" />
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
     <meta charset="UTF-8">
     <title>Posts Dashboard</title>
 </head>
@@ -15,9 +15,10 @@
     <a href="/">About</a>
 </nav>
 <h1>These are the current posts</h1>
-<div th:each="post:${publicPosts}">
+<div class="post-container" th:each="post:${publicPosts}">
     <h4 th:text="${post.title}">Title...</h4>
     <p th:text="${post.content}">Content...</p>
+    <p th:text="${post.private_public}">Public</p>
     <p th:text="${post.stringDate}">Date...</p>
 </div>
 <footer>Developed by me</footer>

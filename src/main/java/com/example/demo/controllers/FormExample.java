@@ -49,7 +49,6 @@ public class FormExample {
     public String dashboard(Model model){
         ArrayList<Post>publicPosts = new ArrayList<>();
         publicPosts.add(new Post("Title 1","I have so much to share with the world. cjiocre aeriv cjioac o cioa c ocai ifd fisdo vcafe.","Public","22/07/14"));
-        publicPosts.add(new Post(" Some title 2","this is the shit","Public","22/05/17"));
         for (Post post : posts){
             if (post.private_public.equals("Public")){
                 publicPosts.add(post);
